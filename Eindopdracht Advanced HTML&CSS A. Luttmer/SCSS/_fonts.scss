@@ -1,0 +1,33 @@
+/* Fonts */
+
+@font-face {
+  font-family: "halifaxw03-regular";
+  src: url("fonts/halifax_w03_regular-webfont.woff2") format("woff2"),
+    url("fonts/halifax_w03_regular-webfont.woff") format("woff"),
+    url("fonts/halifaxw03-regular.ttf") format("truetype"),
+    url("fonts/halifaxw03-regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "artico";
+  src: url("fonts/artico-webfont.woff2") format("woff2"),
+    url("fonts/artico-webfont.woff") format("woff"),
+    url("fonts/artico.ttf") format("truetype"),
+    url("fonts/artico.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "textanarrow";
+  src: url("fonts/textanarrow-webfont.woff2") format("woff2"),
+    url("fonts/textanarrow-webfont.woff") format("woff"),
+    url("fonts/textanarrow.ttf") format("truetype"),
+    url("fonts/textanarrow.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "genjiro";
+  src: url("fonts/genjiro.woff2") format("woff2"),
+    url("fonts/genjiro.woff") format("woff"),
+    url("fonts/genjiro.ttf") format("truetype"),
+    url("fonts/genjiro.otf") format("opentype");
+}

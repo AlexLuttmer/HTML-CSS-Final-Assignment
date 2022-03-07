@@ -1,0 +1,369 @@
+/* Imports */
+
+@import "./fonts.scss";
+@import "./colors.scss";
+
+/* General Styles */
+
+body {
+  background-color: $backgroundColor;
+  color: $textColor;
+  margin: 0;
+}
+
+.title {
+  text-align: center;
+  font-family: "artico";
+}
+
+h1 {
+  font-size: 3vw;
+  margin: 0;
+  color: red;
+}
+
+h2 {
+  font-size: 2vw;
+  margin: 0;
+}
+
+/* Portfolio Grid Styles */
+
+.pgrid {
+  display: grid;
+  justify-content: center;
+  margin: 25px;
+  column-gap: 25px;
+  row-gap: 25px;
+  grid-template-columns: repeat(3, 30vw);
+  grid-template-rows: repeat(4, 30vw);
+
+  .pgrid__square {
+    position: relative;
+    border-radius: 15px;
+
+    .pgrid__img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .pgrid__img--fade {
+      opacity: 1;
+      transition-property: opacity;
+      transition-duration: 500ms;
+    }
+
+    &:hover .pgrid__img--fade {
+      opacity: 0;
+    }
+
+    &:hover .pgrid__link {
+      opacity: 1;
+    }
+
+    .pgrid__link {
+      position: absolute;
+      z-index: 1;
+      opacity: 0;
+      margin: 84% 0 0 17%;
+      font-family: "genjiro";
+      font-size: 4vw;
+      color: white;
+      text-decoration: none;
+      transition-property: color;
+      transition-duration: 500ms;
+
+      &:hover {
+        color: $linkHoverColor;
+      }
+    }
+  }
+}
+
+/* Testimonial & Social Media Buttons Wrapper */
+
+.testim_smbmenu_wrapper {
+  display: flex;
+  overflow-x: hidden;
+}
+
+/* Testimonial Styles*/
+
+.testim {
+  display: flex;
+  flex-direction: column;
+  width: 42.969vw;
+  margin-bottom: 1.953vw;
+  margin-left: 28%;
+  box-shadow: 4px 5px 8px -1px $boxShadowColor;
+  border-radius: 1.953vw;
+
+  .testim__top {
+    height: 31.25vw;
+    padding: 3.906vw 3.125vw 0 3.125vw;
+    border-top-left-radius: 1.953vw;
+    border-top-right-radius: 1.953vw;
+    background-color: $topBackgroundColor;
+    font-size: 2.266vw;
+    text-align: left;
+    font-family: "halifaxw03-regular";
+    line-height: 1.6;
+    color: $topTextColor;
+  }
+
+  .testim__circle {
+    align-self: center;
+    z-index: 1;
+    height: 13.594vw;
+    width: 13.594vw;
+    margin: -6.797vw 0 -6.797vw 0;
+    border-radius: 50%;
+    background-color: $circleBackgroundColor;
+
+    .testim__photo {
+      height: 12.5vw;
+      width: 12.5vw;
+      padding-left: 0.547vw;
+      padding-top: 0.547vw;
+    }
+  }
+
+  .testim__bottom {
+    height: 14.453vw;
+    margin-top: 0;
+    border-bottom-left-radius: 1.953vw;
+    border-bottom-right-radius: 1.953vw;
+    padding: 1.953vw;
+    text-align: center;
+    color: white;
+    background-color: $bottomBackgroundColor;
+
+    .testim__name {
+      margin: 7.031vw 0 1.172vw 0;
+      font-family: "artico";
+      color: $bottomNameColor;
+      letter-spacing: 0.234vw;
+      font-size: 2.031vw;
+    }
+
+    .testim__url {
+      margin: 0.781vw 0 0.391vw 0;
+      font-size: 1.953vw;
+      font-family: "textanarrow";
+      color: $bottomUrlColor;
+      letter-spacing: 0.156vw;
+    }
+  }
+}
+
+/* Social Media Buttons */
+
+.smbmenu {
+  align-self: center;
+  z-index: 1;
+  margin-left: auto;
+  
+  .smbmenu__button {
+    display: flex;
+    width: 280px;
+    height: 50px;
+    margin-right: -230px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: transform 400ms;
+    transition-timing-function: ease-in-out;
+    text-align: left;
+
+    &:hover {
+      transform: translateX(-165px);
+    }
+
+    .smbmenu__icons {
+      height: 25px;
+      width: 25px;
+      margin: 13px;
+    }
+
+    .smbmenu__links {
+      font-size: 15px;
+      font-family: "textanarrow";
+      color: white;
+      padding-top: 17px;
+    }
+  }
+
+  .smbmenu__button--blog {
+    background-color: $blogButtonColor;
+  }
+
+  .smbmenu__button--twitter {
+    background-color: $twitterButtonColor;
+  }
+
+  .smbmenu__button--linkedin {
+    background-color: $linkedinButtonColor;
+  }
+
+  .smbmenu__button--fb {
+    background-color: $facebookButtonColor;
+  }
+
+  .smbmenu__button--github {
+    background-color: $githubButtonColor;
+  }
+}
+
+/* Media Queries: Tablet */
+
+@media (max-width: 1023px) {
+
+  /* Tablet: Portfolio Grid */
+
+  .pgrid {
+    grid-template-columns: repeat(2, 45vw);
+    grid-template-rows: repeat(6, 45vw);
+
+    .pgrid__square .pgrid__link {
+      font-size: 6vw;
+    }
+  }
+
+  /* Tablet: Testimonial */
+
+  .testim {
+    width: 64.454vw;
+    margin-bottom: 2.929vw;
+    margin-left: 18%;
+    border-radius: 2.929vw;
+
+    .testim__top {
+      height: 46.88vw;
+      padding: 5.859vw 4.688vw 0 4.688vw;
+      border-top-left-radius: 2.929vw;
+      border-top-right-radius: 2.929vw;
+      font-size: 3.399vw;
+    }
+
+    .testim__circle {
+      height: 20.391vw;
+      width: 20.391vw;
+      margin: -10.196vw 0 -10.196vw 0;
+
+      .testim__photo {
+        height: 18.75vw;
+        width: 18.75vw;
+        padding-left: 0.82vw;
+        padding-top: 0.82vw;
+      }
+    }
+
+    .testim__bottom {
+      height: 21.679vw;
+      border-bottom-left-radius: 2.929vw;
+      border-bottom-right-radius: 2.929vw;
+      padding: 2.929vw;
+
+      .testim__name {
+        margin: 10.547vw 0 1.758vw 0;
+        letter-spacing: 0.351vw;
+        font-size: 3.047vw;
+      }
+
+      .testim__url {
+        margin: 1.17vw 0 0.586vw 0;
+        font-size: 2.929vw;
+        letter-spacing: 0.234vw;
+      }
+    }
+  }
+
+  /* Tablet: Social Media Buttons */
+
+  .smbmenu {
+
+    .smbmenu__button {
+      width: 420px;
+      height: 75px;
+      margin-right: -345px;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+
+      &:hover {
+        transform: translateX(-248px);
+      }
+
+      .smbmenu__icons {
+        height: 38px;
+        width: 38px;
+        margin: 20px;
+      }
+
+      .smbmenu__links {
+        font-size: 22.5px;
+        padding-top: 25px;
+      }
+    }
+  }
+}
+
+/* Media Queries: Mobile */
+
+@media (max-width: 767px) {
+
+  /* Mobile: General Styles */
+
+  h1 {
+    font-size: 5vw;
+  }
+
+  h2 {
+    font-size: 3.5vw;
+  }
+
+  /* Mobile: Portfolio Grid */
+
+  .pgrid {
+    grid-template-columns: 90vw;
+    grid-template-rows: repeat(12, 90vw);
+
+    .pgrid__square .pgrid__link {
+      font-size: 12vw;
+    }
+  }
+
+  /* Mobile: Testimonial */
+
+  .testim {
+    margin-left: 15%;
+  }
+
+  /* Mobile: Social Media Buttons */
+  
+  .smbmenu {
+
+    .smbmenu__button {
+      width: 280px;
+      height: 50px;
+      margin-right: -230px;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+
+      &:hover {
+        transform: translateX(-165px);
+      }
+
+      .smbmenu__icons {
+        height: 25px;
+        width: 25px;
+        margin: 13px;
+      }
+
+      .smbmenu__links {
+        font-size: 15px;
+        padding-top: 17px;
+      }
+    }
+  }
+}
